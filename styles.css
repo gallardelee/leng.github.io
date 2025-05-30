@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   line-height: 1.6;
 }
 
-/* Header + Navbar */
+
 .top-header {
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ body {
   display: flex;
 }
 
-/* Navbar - always visible, responsive layout */
+
 .navbar ul {
   list-style: none;
   display: flex;
@@ -45,7 +45,8 @@ body {
   color: #e0a800;
 }
 
-/* Banner - make image responsive */
+
+
 .banner img {
   width: 100%;
   height: 70vh;
@@ -53,7 +54,7 @@ body {
   object-fit: cover;
 }
 
-/* Main Content */
+
 .home-content {
   padding: 2rem;
   text-align: center;
@@ -88,6 +89,10 @@ body {
   height: 40vh;
   border-radius: 20px;
 }
+.card:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
 
 /* Footer */
 footer {
@@ -111,10 +116,13 @@ footer {
    
   }
   .navbar {
-    border-bottom: 2px solid #000000;
+    
     padding-bottom: 10px; 
     
   }
+  .active{
+  border-bottom: 1px solid;
+}
 
   .navbar ul {
     flex-direction: column;
@@ -122,13 +130,16 @@ footer {
     padding: 0;
     margin-top: 1rem;
     border-bottom: #000000;
+   
   }
 
   .navbar ul li {
     padding: 0.5rem 0;
     border-bottom: #333;
   }
-
+.li{
+  border-bottom: #000000;
+}
   .banner img {
     height: auto;
     max-height: 60vh;
@@ -176,11 +187,12 @@ footer {
 }
 .sub{
 text-align: right;
-
+margin-right: 120px;
 }
 
 
-/* Responsive */
+
+
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
@@ -192,8 +204,14 @@ text-align: right;
   }
 
   .form-row input,
+  .form-row select,
   .form-row textarea {
     width: 100%;
   }
+ 
   
+ .button{
+  text-align: center;
+  margin-right: 70px;
+ }
 }
