@@ -122,6 +122,7 @@ footer {
   }
   .active{
   border-bottom: 1px solid;
+  align-items: stretch;
 }
 
   .navbar ul {

@@ -3,103 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact |Mango Paradise</title>
+  <title>Contact | Mango Paradise</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="shortcut icon" href="logooo-removebg-preview.png" >
+  <link rel="shortcut icon" href="logooo-removebg-preview.png">
 </head>
 <body>
+
   <header class="top-header">
     <div class="logo">
       <img src="logooo-removebg-preview.png" alt="Logo" />
     </div>
     <nav class="navbar">
       <ul>
-        <li><a href="index.html"class="active">HOMEPAGE</a></li>
-        <li><a href="about.html"class="active">ABOUT US</a></li>
-        <li><a href="contact.html"class="active">CONTACT US</a></li>
+        <li><a href="index.html" class="active">HOMEPAGE</a></li>
+        <li><a href="about.html" class="active">ABOUT US</a></li>
+        <li><a href="contact.html" class="active">CONTACT US</a></li>
       </ul>
     </nav>
   </header>
 
-  
-
-
   <section class="banner">
     <div class="banner image">
       <img src="bannerrrr.png" alt="">
-     </div>
+    </div>
   </section>
+
   <div class="form-container">
-  <form>
-    <h2>Contact Us</h2>
 
-    <div class="form-row">
-      <label>First Name</label>
-      <input type="text" placeholder="Your Name 🥭" required />
-    </div>
+   <form id="contactForm" onsubmit="validateForm(event)">
 
-    <div class="form-row">
-      <label>Last Name</label>
-      <input type="text" placeholder="Your Last Name 🥭" required />
-    </div>
+      <h2>Contact Us</h2>
 
-    <div class="form-row">
-      <label>Telephone No.</label>
-      <input type="tel" placeholder="+639634769388 or 09634667388 🥭" required />
-    </div>
+      <div class="form-row">
+        <label>First Name</label>
+        <input type="text" id="fname" placeholder="Your Name 🥭">
+      </div>
 
-    <div class="form-row">
-      <label>Email</label>
-      <input type="email" placeholder="example@gmail.com 🥭" required />
-    </div>
+      <div class="form-row">
+        <label>Last Name</label>
+        <input type="text" id="lname" placeholder="Your Last Name 🥭">
+      </div>
 
-    <div class="form-row">
-      <label>Organization</label>
-      <input type="text" placeholder="Your Organization 🥭" />
-    </div>
+      <div class="form-row">
+        <label>Telephone No.</label>
+        <input type="tel" id="tel" placeholder="+639634769388 or 09634667388 🥭">
+      </div>
 
-    <div class="form-row">
-      <label>Province</label>
-       <select>
-        <option>Select your Province 🥭</option>
-        
-      </select>
-    </div>
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="example@gmail.com 🥭">
+      </div>
 
-    <div class="form-row">
-      <label>City/Town</label>
-      <select>
-        <option>Select your Municipality or City 🥭</option>
-        
-      </select>
-    </div>
+      <div class="form-row">
+        <label>Organization</label>
+        <input type="text" id="org" placeholder="Your Organization 🥭">
+      </div>
 
-    <div class="form-row">
-      <label>Barangay </label>
-      <select>
-        <option>Select your Barangay 🥭</option>
-        
-      </select>
-    </div>
+      <div class="form-row">
+        <label>Province</label>
+        <select id="province">
+          <option value="">Select your Province 🥭</option>
+          <option value="Davao del Norte">Davao del Norte</option>
+          <option>Davao De Oro</option>
+          <option>Davao Del sur</option>
+        </select>
+      </div>
 
-    <div class="form-row">
-      <label>Street </label>
-      <input type="text" placeholder="Street Name 🥭" />
-    </div>
+      <div class="form-row">
+        <label>City/Town</label>
+        <select id="city">
+          <option value="">Select your City 🥭</option>
+          <option value="Tagum">Tagum</option>
+          <option>Panabo</option>
+          <option>New Corella</option>
+          <option>Asuncion</option>
+        </select>
+      </div>
 
-    <div class="form-row">
-      <label>Message</label>
-      <textarea placeholder="Write something🥭🥭🥭"></textarea>
-    </div>
-<div class="sub">
-    <button type="submit"><h2>Submit</h2></button>
-    </div>
-  </form>
-</div>
- <footer>
+      <div class="form-row">
+        <label>Barangay</label>
+        <select id="barangay">
+          <option value="">Select your Barangay 🥭</option>
+          <option >La Filipina</option>
+          <option value="Mankilam">Mankilam</option>
+          <option>Cuambogan</option>
+          <option>Visayan</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Street</label>
+        <input type="text" id="street" placeholder="Street Name 🥭">
+      </div>
+
+      <div class="form-row">
+        <label>Message</label>
+        <textarea id="message" placeholder="Write something 🥭🥭🥭"></textarea>
+      </div>
+
+      <div class="sub">
+        <button type="submit"><h2>Submit</h2></button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
     <p>Copyright &copy; 2025, Mango Paradise 🥭</p>
   </footer>
 
-  
+ 
+  <script>
+      function validateForm(e) {
+    e.preventDefault();
+
+      let fname = document.getElementById("fname").value.trim();
+      let lname = document.getElementById("lname").value.trim();
+      let tel = document.getElementById("tel").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let org = document.getElementById("org").value.trim();
+      let province = document.getElementById("province").value;
+      let city = document.getElementById("city").value;
+      let barangay = document.getElementById("barangay").value;
+      let street = document.getElementById("street").value.trim();
+      let message = document.getElementById("message").value.trim();
+
+      
+      if (!fname || !lname || !tel || !email || !org || !province || !city || !barangay || !street || !message) {
+        alert("Ubang fields kay empty man uy");
+        return;
+      }
+
+      
+      if (fname.toLowerCase() === lname.toLowerCase()) {
+        alert("First Name and Last Name should not be the same.");
+        return;
+      }
+
+      
+      if (province !== "Davao del Norte" || city !== "Tagum" || barangay !== "Mankilam") {
+        alert("Address must be: Davao del Norte, Tagum, Mankilam.");
+        return;
+      }
+
+      
+      if (isNaN(tel)) {
+        alert("Telephone must be a number.");
+        return;
+      }
+
+      
+      if (message.length < 10) {
+        alert("Message must be at least 10 characters long.");
+        return;
+      }
+
+      alert("Thank you for contacting Mango Paradise! 🥭 🥭");
+      return true;
+    }
+  </script>
+
 </body>
 </html>
